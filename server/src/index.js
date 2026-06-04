@@ -9,8 +9,25 @@ dotenv.config();
 
 const app = express();
 
+const allowedOrigins = process.env.FRONTEND_URL
+  ? process.env.FRONTEND_URL.split(',').map(o => o.trim())
+  : ['http://localhost:5173', 'http://127.0.0.1:5173', 'https://expense-tracker-85m1.vercel.app'];
+
 const corsOptions = {
-  origin: process.env.FRONTEND_URL ? process.env.FRONTEND_URL.split(',') : '*',
+  origin: (origin, callback) => {
+    if (!origin) return callback(null, true);
+    
+    const isAllowed = allowedOrigins.includes(origin) ||
+                      origin.endsWith('.vercel.app') ||
+                      origin.startsWith('http://localhost:') ||
+                      origin.startsWith('http://127.0.0.1:');
+                      
+    if (isAllowed) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true
 };
 app.use(cors(corsOptions));
