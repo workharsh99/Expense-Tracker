@@ -7,7 +7,13 @@ const connectDB = require('./config/db');
 dotenv.config();
 
 const app = express();
-app.use(cors());
+
+const corsOptions = {
+  origin: process.env.FRONTEND_URL ? process.env.FRONTEND_URL.split(',') : '*',
+  credentials: true
+};
+app.use(cors(corsOptions));
+
 app.use(express.json());
 
 connectDB();
