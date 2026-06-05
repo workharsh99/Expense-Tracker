@@ -2,7 +2,7 @@ import React from 'react'
 import { PieChart, Pie, Cell, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, AreaChart, Area } from 'recharts'
 import { FiPieChart, FiBarChart2, FiActivity } from 'react-icons/fi'
 
-const COLORS = ['#10b981', '#34d399', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899', '#06b6d4', '#64748b']
+const COLORS = ['#0353a4', '#38bdf8', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899', '#06b6d4', '#64748b']
 
 const CustomTooltip = ({ active, payload, label }) => {
   if (active && payload && payload.length) {
@@ -91,7 +91,7 @@ export default function Charts({ summary }) {
               <BarChart data={monthlyData}>
                 <XAxis dataKey="month" stroke="#94a3b8" fontSize={10} tickLine={false} />
                 <YAxis stroke="#94a3b8" fontSize={10} tickLine={false} axisLine={false} />
-                <Tooltip content={<CustomTooltip />} cursor={{ fill: 'rgba(16,185,129,0.03)' }} />
+                <Tooltip content={<CustomTooltip />} cursor={{ fill: 'rgba(3,83,164,0.03)' }} />
                 <Bar dataKey="expense" fill="#ff7f7f" radius={[4, 4, 0, 0]} name="Expense">
                   {monthlyData.map((entry, idx) => (
                     <Cell key={idx} fill="url(#barGradient)" />
@@ -99,8 +99,8 @@ export default function Charts({ summary }) {
                 </Bar>
                 <defs>
                   <linearGradient id="barGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#34d399" />
-                    <stop offset="100%" stopColor="#047857" />
+                    <stop offset="0%" stopColor="#38bdf8" />
+                    <stop offset="100%" stopColor="#0353a4" />
                   </linearGradient>
                 </defs>
               </BarChart>
@@ -122,8 +122,8 @@ export default function Charts({ summary }) {
               <AreaChart data={monthlyData}>
                 <defs>
                   <linearGradient id="colorInc" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#10b981" stopOpacity={0.3}/>
-                    <stop offset="95%" stopColor="#10b981" stopOpacity={0}/>
+                    <stop offset="5%" stopColor="#0353a4" stopOpacity={0.3}/>
+                    <stop offset="95%" stopColor="#0353a4" stopOpacity={0}/>
                   </linearGradient>
                   <linearGradient id="colorExp" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="5%" stopColor="#ef4444" stopOpacity={0.3}/>
@@ -133,7 +133,7 @@ export default function Charts({ summary }) {
                 <XAxis dataKey="month" stroke="#94a3b8" fontSize={10} tickLine={false} />
                 <YAxis stroke="#94a3b8" fontSize={10} tickLine={false} axisLine={false} />
                 <Tooltip content={<CustomTooltip />} />
-                <Area type="monotone" dataKey="income" stroke="#10b981" strokeWidth={2} fillOpacity={1} fill="url(#colorInc)" name="Income" />
+                <Area type="monotone" dataKey="income" stroke="#0353a4" strokeWidth={2} fillOpacity={1} fill="url(#colorInc)" name="Income" />
                 <Area type="monotone" dataKey="expense" stroke="#ef4444" strokeWidth={2} fillOpacity={1} fill="url(#colorExp)" name="Expense" />
               </AreaChart>
             </ResponsiveContainer>

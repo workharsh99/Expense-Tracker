@@ -45,8 +45,8 @@ html, body, #root {
 
 .glass-input:focus {
   outline: none !important;
-  border-color: #10b981 !important;
-  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2) !important;
+  border-color: #0353a4 !important;
+  box-shadow: 0 0 0 2px rgba(3, 83, 164, 0.2) !important;
   background: #ffffff !important;
 }
 
@@ -56,7 +56,7 @@ html, body, #root {
 .glass-card-hover:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
-  border-color: rgba(16, 185, 129, 0.3);
+  border-color: rgba(3, 83, 164, 0.3);
 }
 
 /* Custom animations */
@@ -75,7 +75,7 @@ html, body, #root {
   position: absolute;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.25) 0%, rgba(0, 0, 0, 0) 70%);
+  background: radial-gradient(circle, rgba(3, 83, 164, 0.25) 0%, rgba(0, 0, 0, 0) 70%);
   filter: blur(65px);
   animation: pulseGlow 8s infinite ease-in-out;
   pointer-events: none;
@@ -86,7 +86,7 @@ html, body, #root {
   position: absolute;
   width: 450px;
   height: 450px;
-  background: radial-gradient(circle, rgba(52, 211, 153, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
   filter: blur(65px);
   animation: pulseGlow 12s infinite ease-in-out;
   pointer-events: none;

@@ -3,7 +3,7 @@ import api from '../services/api'
 import { AreaChart, Area, ResponsiveContainer, XAxis, YAxis, Tooltip } from 'recharts'
 import { FiActivity, FiArrowUpRight, FiTrendingUp, FiShoppingBag, FiInfo } from 'react-icons/fi'
 
-const COLORS = ['#10b981', '#34d399', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899', '#06b6d4', '#64748b']
+const COLORS = ['#0353a4', '#38bdf8', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899', '#06b6d4', '#64748b']
 
 const CustomTooltip = ({ active, payload, label }) => {
   if (active && payload && payload.length) {
@@ -147,14 +147,14 @@ export default function Analytics() {
             <AreaChart data={cumulativeSavingsData}>
               <defs>
                 <linearGradient id="netWorthGlow" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#10b981" stopOpacity={0.3}/>
-                  <stop offset="95%" stopColor="#10b981" stopOpacity={0}/>
+                  <stop offset="5%" stopColor="#0353a4" stopOpacity={0.3}/>
+                  <stop offset="95%" stopColor="#0353a4" stopOpacity={0}/>
                 </linearGradient>
               </defs>
               <XAxis dataKey="month" stroke="#94a3b8" fontSize={10} tickLine={false} />
               <YAxis stroke="#94a3b8" fontSize={10} tickLine={false} axisLine={false} />
               <Tooltip content={<CustomTooltip />} />
-              <Area type="monotone" dataKey="Net Worth" stroke="#10b981" strokeWidth={2.5} fillOpacity={1} fill="url(#netWorthGlow)" />
+              <Area type="monotone" dataKey="Net Worth" stroke="#0353a4" strokeWidth={2.5} fillOpacity={1} fill="url(#netWorthGlow)" />
             </AreaChart>
           </ResponsiveContainer>
         </div>
