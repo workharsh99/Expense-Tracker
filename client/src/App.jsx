@@ -12,8 +12,18 @@ import { AuthProvider, useAuth } from './context/AuthContext'
 import Navbar from './components/Navbar'
 
 function Protected({ children }) {
-  const { user } = useAuth();
-  if (!user) return <Navigate to="/login" />;
+  const { user, loading } = useAuth();
+
+  if (loading) {
+    return (
+      <div className="min-h-[60vh] flex flex-col items-center justify-center">
+        <div className="w-10 h-10 border-4 border-emerald-200 border-t-emerald-600 rounded-full animate-spin"></div>
+        <p className="mt-4 text-sm font-medium text-slate-500">Checking authentication...</p>
+      </div>
+    );
+  }
+
+  if (!user) return <Navigate to="/login" replace />;
   return children;
 }
 
